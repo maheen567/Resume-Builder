@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic & Editable Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9316e07e36.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="cv-container">
+        <h1 style="
+        text-align: center;
+        margin: 5px 0;
+        ">&#10047; Dynamic & Editable Resume Builder &#10047;</h1>
+
+        <p style="
+        text-align: center;
+        margin-top: 5px;
+        ">By Maheen Hussain</p>
+
+        <form id="resume-form">
+
+            <fieldset>
+                <!-- For Personal Information -->
+                <h2 style="
+                text-align: center;
+                ">Personal Information</h2>
+
+                <label for="nameField">Name:</label>
+                <input type="text" id="nameField" class="form-control" placeholder="Enter your name" required>
+
+                <!-- For Date of birth -->
+                <label for="DOBField">Date of birth:</label>
+                <input type="date" id="DOBField" class="form-control" placeholder="Enter your date of birth" required>
+
+                <!-- For email -->
+                <label for="emailField">Email:</label>
+                <input type="text" id="emailField" placeholder="Enter your email" required>
+
+                <!-- For Phone Number-->
+                <label for="contactField">Contact:</label>
+                <input type="text" id="contactField" class="form-control" placeholder="Enter your contact no" required>
+
+                <!-- For Address-->
+                <label for="addressField">Address:</label>
+                <textarea id="addressField" class="form-control" placeholder="Enter your address" rows="2" required></textarea>
+
+                <!-- for Profile Picture -->
+                 <label for="profilePic">Profile Picture:</label>
+                 <input type="file" id="profilePicture" required>
+            </fieldset>
+
+            <fieldset>
+                <h2 style="text-align: center;">Important Links</h2>
+                <!-- For Linkedin -->
+                <label for="linkedinField">Linkedin:</label>
+                <input type="text" id="linkedinField"  placeholder="Enter your Linkedin URL" >
+
+                <!-- For Github Profile  -->
+                <label for="githubField">Github:</label>
+                <input type="text" id="githubField"  placeholder="Enter your Github URL">
+
+                <!-- For Portfolio Website -->
+                <label for="portfolioField">Portfolio:</label>
+                <input type="text" id="portfolioField"  placeholder="Enter your portfolio URL">
+            </fieldset>
+
+            <fieldset >
+                <!-- For Professional Information -->
+                <h2 style="
+                text-align: center;
+                ">Professional Information</h2>
+
+                <!-- For Objective -->
+                <label for="ObjectiveField">Objective:</label>
+                <textarea id="objectiveField" class="form-control" rows="5" placeholder="Enter your objective" required></textarea>
+
+                <!-- For Role Field -->
+                <div id="we">
+                <label for="role">Your Role:</label>
+                <input type="text" id="roleField" placeholder="Enter your role e.g, Web Developer" required>
+
+                <!-- For Work Experience Field -->
+                <label for="weField">Work Experience:</label>
+                <textarea class="form-control weField" id="weField" rows="5" placeholder="Enter your work experience" required></textarea>
+                <button type="button" onclick="addnewWEField()" class="btn-1" id="weAddButton">Add</button>
+                </div>
+
+                <!-- New Textarea -->
+
+                <!-- For Academic Qualification -->
+                <div id="aq">
+                <label for="aqField">Academic Qualification:</label>
+                <textarea class="form-control aqField" id="aqField" rows="5" placeholder="Enter your academic qualification" required></textarea>
+                <button type="button" onclick="addnewAQField()" class="btn-2" id="aqAddbutton">Add</button>
+                </div>
+
+                <!-- For Skills -->
+                <div id="skills">
+                <label for="skillsField">Skills:</label>
+                <textarea class="form-control skillsField" id="skillsField" placeholder="Enter your skills" required></textarea>
+                <button type="button" onclick="addnewSkillsField()" class="btn-3" id="skillsAddButton">Add</button>
+                </div>
+            </fieldset>
+
+            <!-- For Generate Resume Button -->
+            <button type="submit" onclick="generateResume()" id="generate-resume"><b>&#10047; Generate Resume &#10047;</b></button>
+        </form>
+    </div>
+
+    <br>
+
+        <!-- Dynamic Resume -->
+        <div id="resume-template">
+
+            <!-- Resume will be generated below! -->
+            <div id="resume-display">
+
+                <div id="top-section">
+                <img src="" alt="Profile Picture" id="profile-picture">
+                <h2 id="nameT1"></h2>
+                <h3 id="roleT" ></h3>
+                </div>
+
+                <div class="left-right-section">
+
+                    <!-- For Left Section -->
+                    <div class="left-container">    
+                        <section class="sectioncontainer">
+                            <h3 class="heading-text">Personal Information</h3>
+                            <p id="nameT2"></p>
+                            <p id="DOBT"></p>
+                            <p id="emailT"></p>
+                            <p id="contactT"></p>
+                            <p id="addressT"></p>
+                        </section>
+
+                        <section class="sectioncontainer">
+                            <h3 class="heading-text">Contact Info</h3>
+                            <div id="linkedinT"></div>
+                            <div id="githubT"></div>
+                            <div id="portfolioT"></div>
+                        </section>
+
+                        <section class="sectioncontainer">
+                            <h3 class="heading-text">Skills</h3>
+                            <ul id="skillsT"></ul>
+                        </section>
+                    </div>
+
+                    <div id="right-container">
+                        <section class="sectioncontainer">
+                            <h3 class="heading-text">Career Objective</h3>
+                            <p id="objectiveT"></p>
+                        </section>
+
+                        <section class="sectioncontainer">
+                            <h3 class="heading-text">Work Experience</h3>
+                            <ul id="weT" class="workExperience"></ul>
+                        </section>
+
+                        <section class="sectioncontainer">
+                            <h3 class="heading-text">Academic Qualification</h3>
+                            <ul id="aqT"></ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btnSection">
+            <button onclick="printResume()" id="print-resume">Print Resume</button>
+            <button onclick="editResume()" id="editable-resume">Edit Resume</button>
+        </div>
+        <!-- Connect Javascript File with HTML  -->
+        <script src="script.js"></script>
+</body>
+</html>
+
+
