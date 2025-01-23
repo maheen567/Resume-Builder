@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* General Styling */
+
+body {
+  margin: 0;
+  padding: 150px;
+  font-family: "Roboto", serif;
+  background-color: #f4f4f4;
+}
+
+.resume-container {
+  display: flex;
+  background-color: white;
+  width: 80;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(10, 10, 10, 0.3);
+}
+
+/* Left Section Styling */
+
+.left-section {
+  background-color: #025766;
+  color: #ffffff;
+  padding: 20px;
+  width: 35%;
+  text-align: center;
+  border-right: 5px solid #012b33;
+}
+
+#career-obj {
+  color: white;
+  box-shadow: 0 0 15px white;
+}
+
+#certificates {
+  color: white;
+  box-shadow: 0 0 15px white;
+}
+
+#soft-skills {
+  color: white;
+  box-shadow: 0 0 15px white;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  margin-top: 10%;
+  border-radius: 50%;
+  border: 5px solid #012b33;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+p {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 18px;
+  padding: 2%;
+  margin: 25px 0 20px;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 0 17px #012b33;
+}
+
+ul {
+  list-style-type: fill round;
+  padding: 10;
+  margin: 10px 0;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+/* Right Section Styling */
+
+.right-section {
+  padding: 20px;
+  width: 65%;
+}
+
+.social-link {
+  color: black;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.social-link:hover {
+  color: rgb(68, 63, 63);
+  text-decoration: underline;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 7px black;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border: 2px solid #012b33;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #025766;
+  color: white;
+  border: 2px solid white;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-section {
+    padding: 10px;
+    width: 35%;
+    text-align: center;
+    border-right: 5px solid #012b33;
+  }
+
+  .right-section {
+    padding: 10px;
+  }
+  .profile-picture {
+    width: 75px;
+    height: 75px;
+    border: 2px solid #012b33;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-size: 12px;
+    padding: 2%;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 17px #012b33;
+  }
+
+  h1 {
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 10px;
+    margin: 5px 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 10px 0;
+    font-size: 10px;
+  }
+
+  ul li {
+    list-style-type: circle;
+    margin: 5px 0;
+    margin-left: 15px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
